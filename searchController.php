@@ -3,7 +3,8 @@
 
    
   
-   $word = $_GET['searchBar'];
+   $word = $_POST['searchBar'];
+   // var_dump($_POST);
 
    $searchModel = new Artistes;
    $search = $searchModel->search($word);

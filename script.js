@@ -7,16 +7,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log(ul1);
     var ul2 = document.getElementById('all-result');
     console.log(ul2);
-    // var content = document.getElementById('parent-div')
-    var content = document.getElementsByClassName('parent')
+   
+    var content = document.querySelector('.parent');
+
+    var hr = document.getElementById('separator');
+    hr.hidden = true;  
 
     console.log(content)
-
+    content.style.display = "none"
     val.addEventListener('keyup', (event)=>
     {
+        // if(val.value.length > 0){
+        //     val.style.bore =
+        // }
         // console.log(val.value)\
     ul1.innerHTML = ""
     ul2.innerHTML = ""  
+    hr.hidden = true; 
       
     var valData = new FormData();
     valData.append('searchBar', val.value)
@@ -26,19 +33,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
             body: valData
         
         })
-        .then(response => response.json())
-       
+        .then((response) => {
+            console.log(response)
+          return response.json()
+        })
 
-        .then(response => {
+      
 
+        .then((response) => {
+            
             // si l'input de ma barre de recherche n'est pas vide 
             // lenght compte le nombre de caractère présent dans l'input
             if(val.value.length !== 0)
-            {  
-                // console.log(val.value.innerHTML)
-                console.log(response)
+            {   hr.hidden = false; 
+                content.style.display = "initial"
+                val.style.borderRadius = "20px 0px 0px 1px"
+                console.log(response.startBy)
                 // console.table(response.startBy)
-
+                
                 // si je rentre une valeur dans mon input qui match avec la première lettre d'un nom d'artiste
                 // je passe dans le if. car s'il y a des resultats c'est que mon tableau me renvoit des noms, il n'est pas vide.
                 if(response.startBy.length !== 0)
@@ -55,15 +67,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         var artisteName = li1.innerHTML
                         console.log(artisteName)
                     }
-                    // je veux que si tu click sur entrée (submit de l'html) 
-                    // ca envoie et affiche les résultats trouvés au moment de l'autocompletion dans la page recherche.php
-                    // de quoi j'ai besoin?
-                    // j'ai besoin de créer une adresse url qui get le ou les résultats du tableau. 
-                    // j'ai peut-être besoin de créer un on click event ?
-                    // if(val.value == startswith(artisteName, 0))
-                    // {
-
-                    // }
+              
                 }
                 else
                 {
@@ -92,8 +96,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
             else
             {
-               
-                var hiddenClass = document.getElementsByClassName
+                val.style.borderRadius = "20px 0 0 20px"
+                content.style.display = "none"
                 // content[0].classList.add(hidden);
 
 
@@ -105,15 +109,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
 
 })
-
-// je dois rendre clickable mes resultats de recherche.
-// lorsque je click sur submit j'arrive sur la page recherche.php. 
-// qu'est ce qu'il doit y avoir sur cette page?
-// je dois get  tout les artiste_nom des artistes qui commencent par la value et les envoyer sur recherche
-
-
-// if (val.value == à la première lettre de artiste_nom et if click submit submit)
-// {
-//     
-//
-// }

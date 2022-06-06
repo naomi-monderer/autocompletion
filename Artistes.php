@@ -14,7 +14,7 @@ class Artistes extends DataBase
     {
         $requete = $this->bdd->prepare('SELECT * FROM `artistes`');
         $requete->execute();
-        $result = $requete->fetchAll();
+        $result = $requete->fetch();
         
 
         return $result;
@@ -34,9 +34,11 @@ class Artistes extends DataBase
     public function search($word)
     {
         $wordBind = '%'.$word.'%';
+        $wordBind2 = $word.'%';
 
-    $requete = $this->bdd->prepare('SELECT * FROM artistes WHERE nom_artiste LIKE :wordBind');
-        $requete->execute(array(':wordBind' => $wordBind));
+        $requete = $this->bdd->prepare('SELECT * FROM artistes WHERE nom_artiste LIKE :wordBind AND nom_artiste NOT LIKE :wordBind2');
+        $requete->execute(array(':wordBind' => $wordBind ,
+                                ':wordBind2' => $wordBind2 ));
         $result = $requete->fetchAll();
 
         return $result;
@@ -44,8 +46,7 @@ class Artistes extends DataBase
 
     public function searchStart($word)
     {
-        $wordBind = $word.'%';
-        
+        $wordBind = $word.'%';        
         $requete = $this->bdd->prepare('SELECT * FROM artistes WHERE nom_artiste LIKE :wordBind');
         $requete->execute(array(':wordBind' => $wordBind));
         $result = $requete->fetchAll();

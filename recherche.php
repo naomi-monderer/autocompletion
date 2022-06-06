@@ -8,6 +8,12 @@ $searchModel = new Artistes;
 $searchContains = $searchModel->search($word);
 $searchStarts = $searchModel->searchStart($word);
 
+// $artistesData = $searchModel->getById($id);
+// echo '<pre>';
+
+// var_dump($artistesData);
+// echo '</pre>';
+
 
 ?>
 <!DOCTYPE html>
@@ -16,6 +22,8 @@ $searchStarts = $searchModel->searchStart($word);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Kurale&family=Manjari:wght@100&family=Permanent+Marker&family=Quicksand:wght@500&family=Sonsie+One&display=swap"
+     rel="stylesheet"> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <script src="script.js"></script>
     <link rel="stylesheet" href="style/style.css">
@@ -23,27 +31,32 @@ $searchStarts = $searchModel->searchStart($word);
     <title>Recherche</title>
 </head>
 <body>
-    <header>
-        
-        <h1>GWOKAY </h1>
-        
-         <form action="recherche.php" method="get" id="form">
-                <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
-                <input type="text" placeholder="Search" name="searchBar">
-                
-            </form>
-            <div class="parent" id="parent-div">
-                <ul class="parent-li1" id="suggestions">
-                
-                </ul>
+<header>
+        <article class="parent-title">
+            <h1 class="h1-header">Gwokanng </h1>
+            <img class="star" src="star3.svg" alt="">
+        </article>
+        <section class="parent-search-bar">
+            <article>
+                <form action="recherche.php" method="get" id="form">
+            
+                        <input type="text" placeholder="Search" name="searchBar" autocomplete="off">
+                    <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div class="parent" id="parent-div">
+                    <ul class="parent-li1" id="suggestions">
+                    
+                    </ul>
 
-                <hr>
+                    <hr id="separator">
 
-                <ul id="all-result">
+                    <ul id="all-result">
 
-                </ul>
+                    </ul>
 
-            </div>
+                </div>
+            </article>
+        </section>
     </header>
     <main>
         <section>
@@ -55,16 +68,17 @@ $searchStarts = $searchModel->searchStart($word);
 
                       ?>
                         <form action="element.php" method="get">
-                        <button type="submit"  name="displayArtiste" value="<?php $getByid['id']?>">
-                        <a href="element.php?id=<?=$getIdBy['id'] ?>">
-                        
-                                    
-                       <h1><?php echo $searchStart['nom_artiste'];?></h1>
-                       <p><?php  echo $searchStart['legende'];?></p>
-                       <p><?php echo $searchStart['lien'];?></p>
-                       <input type='hidden'name="display" value="<?php $searchStart['id']?>" >
-                       <?php var_dump($searchStart['id'])?>
-                       </button>
+                            <input type="hidden" name="hidden_id" value="<?= $searchStart['id'];?>">
+                            <button class="button-list" type="submit"  name="display_artiste" value=1>
+
+                            
+                            <h1><a class="link" href="element.php?id=<?= $searchStart['id'];?>&display_artiste=1"><?php echo $searchStart['nom_artiste'];?></a></h1>
+                            <p class="sublink"><?php  echo $searchStart['legende'];?></p>
+                            <p class="sublink"><?php echo $searchStart['lien'];?></p>
+
+                            
+                           
+                            </button>
                        </form>
                        
                        
@@ -74,7 +88,7 @@ $searchStarts = $searchModel->searchStart($word);
 
                 ?>
             </article>
-                <hr>
+                <hr class="separator">
             <article>
             <?php   
                     
@@ -82,10 +96,16 @@ $searchStarts = $searchModel->searchStart($word);
                     { 
                        
                         ?>
-                        <h1><?php echo $searchContain['nom_artiste'];?></h1>
-                        <p><?php  echo $searchContain['legende'];?></p>
-                        <p><?php echo $searchContain['lien'];?></p>
-                        
+                        <form action="element.php" method="get">
+                            <button class="button-list" type="submit"  name="display_all_searches">
+                                <input type="hidden" name="hidden_id" value="<?= $searchContain['id'];?>">
+                                
+                                
+                                <h1><?php echo $searchContain['nom_artiste'];?></h1>
+                                <p class="sublink"><?php  echo $searchContain['legende'];?></p>
+                                <p class="sublink"><?php echo $searchContain['lien'];?></p>
+                            </button>
+                        </form>
                         
  
                  <?php   }
@@ -98,18 +118,33 @@ $searchStarts = $searchModel->searchStart($word);
         </section>
      </main>
      <footer>
-        
+         <div>
+            <a class="lien-github" href="https://github.com/naomie-monderer/autocompletion">
+                <i class="fa-brands fa-github-alt"></i>
+            </a>
+         </div>
      </footer>
  </body>
  </html>
  <?php
-if(isset($_GET['displayArtiste']))
+if(isset($_GET['display_artiste']))
 {
-    $id = $_GET['display'];
+    $id = $_GET['hidden_id'];
     $getById = $searchModel->getById($id);
+    ?>
+   
+    <?php
+
     var_dump($getById);
+    
     // header('Location: element.php');
 
+}
+if(isset($_GET['display_all_searches']))
+{
+    $id = $_GET['hidden_id_all_searches'];
+    $getById = $searchModel->getById($id);
+    // header('Location: element.php');
 }
  ?>
        
