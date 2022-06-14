@@ -23,215 +23,207 @@
 /* mobile first */
 @media all and (min-width: 375px) and (max-width: 810px)
 {
-body{
-    background-color: #DAD4FF;
-    /* font-family: 'manjari'; */
-    font-family: 'Kurale', serif;
-    /* font-family: 'victory_history_demoregular','impact'; */
-    color: #B1AADE;
-}
+    body
+    {
+        background-color: #DAD4FF;
+        font-family: 'Kurale', serif;
+        color: #B1AADE;
+    }
 
-p{
-    font-family: 'manjariregular','impact';
-    font-size:0.8em;
-}
+    p
+    {
+        font-family: 'manjariregular','impact';
+        font-size:0.8em;
+    }
 
+    input
+    {
+        border-radius: 20px 0 0 20px;
+        padding-left: 20px;
+        border: none;
+        position: relative;
+        height:5vh;
+        width: 220px;
+        z-index:4;
+        margin-top: 30px;
+    }
 
-input
-{
-    border-radius: 20px 0 0 20px;
-    padding-left: 20px;
-    border: none;
+    form :focus
+    {
+        outline: none;
+    }
+
+    button
+    {
+        border-radius: 0px 20px 20px 0px;
+        border: none;
+        padding-left:20px;
+        background-color: #353523;
+        left: 74%;
+        height:5vh;
+        margin-left: -6px;
+    }
+
+    button i
+    {   
+        margin-right: 15px;
+        color:WHITE;
+    }
+
+    button:hover
+    {
+        cursor: pointer;
+        color :#FFF500;
+    }
+
+    .section1
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:70px 10px 0px 10px;
+    }
+    section{
+        margin: 0;
+    }
+
+    .p-Gwokanng
+    {
+        color: #B1AADE;
+        font-family: 'Kurale', serif;
+    }
+
+    .parent-titles
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lets-try
+    {
     position: relative;
-    height:5vh;
-    width: 220px;
-    z-index:4;
-    margin-top: 30px;
-    /* box-shadow: 5px 5px 10px #212115e9;; */
+    color: #b1aade5a;
+    font-size: 4em;
+    }
 
-   
-}
-form :focus {
-    outline: none;
-}
-button
-{
-    border-radius: 0px 20px 20px 0px;
-    border: none;
-    /* position: absolute; */
-    padding-left:20px;
-    background-color: #353523;
-    left: 74%;
-    /* top:67.7%; */
-    height:5vh;
-    margin-left: -6px;
-}
+    .h1-Gwokanng
+    {
+    position: absolute;
+    top: 180px;
+    color: #FFF500;
+    font-size: 2.5em;
+    }
 
-button i
-{   
-    margin-right: 15px;
-    color:WHITE;
-}
-button:hover
-{
-    cursor: pointer;
-    color :#FFF500;
-}
+    main
+    {
+        min-height: 70vh;
+    }
 
-.section1
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin:70px 10px 0px 10px;
-}
-section{
-    margin: 0;
-}
+    .section3
+    {
+        display:flex;
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+    }
 
-.p-Gwokanng
-{
-    color: #B1AADE;
-    font-family: 'Kurale', serif;
-    /* font-family: 'victory_history_demoregular','impact'; */
-}
-.parent-titles
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 10vh; */
-}
-.lets-try
-{
- position: relative;
- color: #b1aade5a;
- font-size: 4em;
- /* background-color: antiquewhite; */
-}
-.h1-Gwokanng
-{
- position: absolute;
- top: 24%;
- color: #FFF500;
- font-size: 2.5em;
- /* background-color: rgba(122, 100, 71, 0.393); */
-}
-main
-{
-    min-height: 70vh;
-}
-.section3
-{
-    display:flex;
-    justify-content: center; 
-    align-items: center;
-    flex-direction: column;
-   /* background-color: rgb(165, 75, 75); */
-  
-   
-}
-.section4
-{   position:relative;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    /* background-color: rgb(82, 67, 67); */
-    height: 30vh;
-    z-index: -1;
-}
-.filling
-{
-    /* transform-origin: 0 0; */
-    position : absolute;
-    font-family: 'Kurale', serif;
-    font-size: 3.3em;
-    transform: rotate(-90deg);
-    top: 128px;
-    left: 192px;
-    opacity: 15%;
-}
-footer
-{
-    display:flex;
-    flex-direction: column;
-    /* min-height:; */
+    .section4
+    {   position:relative;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 30vh;
+        z-index: -1;
+    }
 
-}
-.star-lien
-{
+    .filling
+    {
+        position : absolute;
+        font-family: 'Kurale', serif;
+        font-size: 3.3em;
+        transform: rotate(-90deg);
+        top: 128px;
+        left: 192px;
+        opacity: 15%;
+    }
+
+    footer
+    {
+        display:flex;
+        flex-direction: column;
+    }
+
+    .star-lien
+    {
     position: fixed;
-left: -46px;
-bottom: -33px;
-/* background: darkblue; */
-width: 158px;
-display: flex;
-justify-content: center;
-align-content: center;
-}
+    left: -46px;
+    bottom: -33px;
+    width: 158px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    }
 
-.lien-github
-{
-    position: absolute;
-    top: 31%;
-    left: 41%;
-}
+    .lien-github
+    {
+        position: absolute;
+        top: 31%;
+        left: 41%;
+    }
 
-.fa-brands
-{
-    font-size: 2.3em;
-    color: #353523;
-    transition: ease-out 0.3s;
-}
-.fa-brands:hover
-{   
-    
-    border: white;
-    font-size: 2.8em;
-    color: #353523;
-    
-}
+    .fa-brands
+    {
+        font-size: 2.3em;
+        color: #353523;
+        transition: ease-out 0.3s;
+    }
+    .fa-brands:hover
+    {   
+        
+        border: white;
+        font-size: 2.8em;
+        color: #353523;
+        
+    }
 
 
-img
-{
-    width: 90%;
-    opacity: 50%;
-}
+    img
+    {
+        width: 90%;
+        opacity: 50%;
+    }
 
-/*--------div autocomplete---------*/
+    /*--------div autocomplete---------*/
 
-.parent
-{
-    background: white;
-    color: #353523;
-    width: 220px;
-    border-radius: 0 0 20px 20px;
-    position: absolute;
-    z-index: 3;
-    padding: 10px;
-    height: 237px;
-    overflow: scroll;
-    box-shadow: 5px 5px 10px #212115e9;;
+    .parent
+    {
+        background: white;
+        color: #353523;
+        width: 220px;
+        border-radius: 0 0 20px 20px;
+        position: absolute;
+        z-index: 3;
+        padding: 10px;
+        height: 237px;
+        overflow: scroll;
+        box-shadow: 5px 5px 5px #5c5c5c5a;
 
-    
-}
-.parent  ul li 
-{
-    /* position: absolute; */
-    overflow:hidden;
-    text-overflow: ellipsis;
-    font-family: 'manjariregular';
-    color : #75756B;
-    font-size: 0.8em;
+        
+    }
+    .parent  ul li 
+    {
+        overflow:hidden;
+        text-overflow: ellipsis;
+        font-family: 'manjariregular';
+        color : #75756B;
+        font-size: 0.8em;
+    }
 
- 
-}
-
-.autocomplete
-{
-    min-width: 292px;
-}
+    .autocomplete
+    {
+        min-width: 292px;
+    }
 
 
 /* /mobile first\ */
@@ -269,9 +261,7 @@ img
    
     body{
         background-color: #DAD4FF;
-        /* font-family: 'manjari'; */
         font-family: 'Kurale', serif;
-        /* font-family: 'victory_history_demoregular','impact'; */
         color: #B1AADE;
     }
     
@@ -279,17 +269,7 @@ img
         font-family: 'manjariregular','impact';
         font-size:1.1em;
     }
-    /* .parent-input
-    {
-        display:flex;
-        justify-content:center;
-        align-items:left;
-        background-color: rgb(212, 129, 129);
-        height:5vh;
-        width: 150px;
-    
-    } */
-    
+
     input
     {   
         
@@ -301,22 +281,20 @@ img
         height:5vh;
         width: 400px;
         z-index:4;
-        /* box-shadow: 5px 5px 10px #212115e9;; */
-    
-       
     }
-    form :focus {
+
+    form :focus
+    {
         outline: none;
     }
+
     button
     {
         border-radius: 0px 20px 20px 0px;
         border: none;
-        /* position: absolute; */
         padding-left:20px;
         background-color: #353523;
         left: 74%;
-        /* top:67.7%; */
         height:5vh;
         margin-left: -6px;
     }
@@ -339,7 +317,8 @@ img
         justify-content: center;
         margin:70px 10px 0px 10px;
     }
-    section{
+    section
+    {
         margin: 0;
     }
     
@@ -347,77 +326,67 @@ img
     {
         color: #B1AADE;
         font-family: 'Kurale', serif;
-        /* font-family: 'victory_history_demoregular','impact'; */
     }
+
     .parent-titles
     {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* height: 10vh; */
     }
+
     .lets-try
     {
      position: relative;
      color: #b1aade5a;
      font-size: 8em;
-     /* background-color: antiquewhite; */
     }
+
     .h1-Gwokanng
     {
      position: absolute;
-     top:27%;
+     top: 221px;
      color: #FFF500;
      font-size: 5em;
-     /* background-color: rgba(122, 100, 71, 0.393); */
     }
-    main
-    {
-        /* min-height: 60vh; */
-    }
+    
     .section3
     {
         display:flex;
         justify-content: center; 
         align-items: center;
         flex-direction: column;
-       /* background-color: rgb(165, 75, 75); */
-      
-       
     }
+
     .section4
     {   position:relative;
         display: flex;
         align-items: center;
         justify-content: end;
-        /* background-color: rgb(82, 67, 67); */
         height: 30vh;
         z-index: -1;
     }
+
     .filling
     {
-        /* transform-origin: 0 0; */
         position : absolute;
         font-family: 'Kurale', serif;
         font-size: 5em;
         transform: rotate(-90deg);
-        /* top: 128px;
-        left: 192px; */
         opacity: 15%;
     }
+
     footer
     {
         display:flex;
         flex-direction: column;
-        /* min-height:; */
-    
     }
+
     .star-lien
     {
         position: fixed;
         left: -48px;
         bottom: -42px;
-        /* background: darkblue; */
         width: 200px;
         display: flex;
         justify-content: center;
@@ -430,16 +399,19 @@ img
         top: 29%;
         left: 40%;
     }
+
     .lien-github:hover
     {
         
     }
+
     .fa-brands
     {
         font-size: 3.5em;
         color: #353523;
         transition: ease-out 0.3s;
     }
+
     .fa-brands:hover
     {   
         
@@ -450,7 +422,6 @@ img
         left: 37%;
         
     }
-    
     
     img
     {
@@ -471,25 +442,22 @@ img
         padding: 10px;
         height: 237px;
         overflow: scroll;
-        box-shadow: 5px 5px 10px #212115e9;;
-    
-        
+        box-shadow: 5px 5px 5px #5c5c5c5a;
     }
+
     .parent  ul li 
     {
-        /* position: absolute; */
+        
         overflow:hidden;
         text-overflow: ellipsis;
         font-family: 'manjariregular';
         color : #75756B;
         font-size: 0.8em;
-    
-     
     }
     
     .autocomplete
     {
-        min-width: 471px;
+        min-width: 473px;
     }
 }
 
